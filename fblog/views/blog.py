@@ -9,14 +9,15 @@
 """
 from markdown import markdown
 
-from flask import Module, render_template, request, url_for, redirect, flash, abort
+from flask import Module, render_template, request, url_for, redirect, flash, abort, Blueprint
 from flaskext.sqlalchemy import Pagination
 from fblog import config
 from fblog.extensions import db
 from fblog.forms import PostForm, CommentsForm
 from fblog.models import Post, Comments, Tag
 
-blog = Module(__name__)
+## blog = Module(__name__)
+blog = Blueprint("blog", __name__)
 
 @blog.route('/')
 @blog.route('/page/<int:page>')

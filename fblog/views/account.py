@@ -1,6 +1,6 @@
 #coding:utf-8
 
-from flask import Module, request, render_template, redirect, url_for, flash
+from flask import Module, request, render_template, redirect, url_for, flash, Blueprint
 
 from flaskext.login import (LoginManager, current_user, login_required, login_user,
                           logout_user, UserMixin, AnonymousUser, confirm_login,
@@ -10,7 +10,8 @@ from fblog.models import Anonymous, User, LoginUser
 from fblog.forms import LoginForm
 from fblog.views import admin
 
-account = Module(__name__)
+## account = Module(__name__)
+account = Blueprint("account", __name__)
 
 login_manager = LoginManager()
 login_manager.anonymous_user = Anonymous

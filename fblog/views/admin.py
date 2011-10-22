@@ -8,7 +8,7 @@
     :license: LGPL
 """
 
-from flask import Module, render_template, request, url_for, redirect, flash, abort
+from flask import Module, render_template, request, url_for, redirect, flash, abort, Blueprint
 from flaskext.login import login_required
 
 from fblog import config
@@ -17,7 +17,8 @@ from fblog.forms import PostForm, CommentsForm
 from fblog.models import Post, Comments
 from fblog.helpers import normalize_tags
 
-admin = Module(__name__)
+## admin = Module(__name__)
+admin = Blueprint("admin", __name__)
 
 @admin.route('/')
 @login_required

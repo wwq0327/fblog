@@ -10,11 +10,12 @@
 
 from werkzeug.contrib.atom import AtomFeed
 
-from flask import Module, request, url_for
+from flask import Module, request, url_for, Blueprint
 
 from fblog.models import Post
 
-feed = Module(__name__)
+#feed = Module(__name__)
+feed = Blueprint("feed", __name__)
 
 class PostFeed(AtomFeed):
     def add_post(self, post):
