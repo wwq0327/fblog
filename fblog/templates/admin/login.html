@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block main %}
+
+
+<h1>登录</h1>
+<div class="error">
+    {% if form.errors %}
+        {% for error in form.errors %}
+             Input Error: {{error}} </br>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<form action="" method=post>
+    {{ form.csrf }}
+    <dl> 
+      <dt>{{ form.username.label }}:
+      <dt> {{ form.username }}
+      <dt>{{ form.password.label }}
+      <dt> {{ form.password }}
+      <dt> <input type=checkbox name=remember value=0> <small>记住我</small>
+      <dt> {{ form.submit }}
+    </dl>
+</form>
+
+<p></p>
+{% endblock %}

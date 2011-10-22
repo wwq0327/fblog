@@ -1,0 +1,10 @@
+<h3>最新评论</h3>
+{% if not topcs %}
+    暂无评论
+{% else %}
+    <ul class="wz">
+    {% for comment in topcs %}
+    <li>{{ comment.name }}评论道 <a href="/post/{{ comment.eid }}/entry#commented-{{ comment.id }}">{{ comment.comments }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}

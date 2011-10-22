@@ -1,0 +1,10 @@
+<h3>最新文章</h3>
+{% if not topwz %}
+    暂时无数据
+{% else %}
+    <ul class="wz">
+    {% for top in topwz %}
+        <li><a href="/post/{{ top.id }}/entry">{{ top.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}

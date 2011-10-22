@@ -1,0 +1,10 @@
+<h3>管理及订阅</h3>
+<ul class="wz">
+{% if current_user.is_authenticated() %}
+    <li><a href="{{ url_for('admin.index') }}">后台管理</a></li>
+    <li><a href="{{ url_for('admin.addpost') }}">添加文章</a></li>
+    <li><a href="{{ url_for('account.logout') }}" >退出管理</a></li>
+{% else %}
+    <li><a href="{{ url_for('account.login') }}">登录</a></li>
+{% endif %}
+    <li><a href="/feed">订阅RSS</a></li></ul>

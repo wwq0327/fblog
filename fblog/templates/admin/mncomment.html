@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% from "_helpers.html" import paginate %}
+
+{% block main %}
+{% include "admin/_mnnav.html" %}
+
+<h1>评论管理</h1>
+
+{% if comm_obj %}
+<div id="adminlist">
+    
+    {% for comm in comm_obj.items %}
+    <ul>
+        <li style="font-size:0.8em;"><a href="/post/{{ comm.eid }}/entry">{{ comm.comments }}</a> <span style="float:right"> 发布时间：{{ comm.commented_on|datetimeformat }} [<a href="/admin/{{ comm.id }}/editcomm">编辑</a>][<a href="/admin/{{ comm.id }}/delcomm">删除</a>]</span></li>
+     </ul>
+</div>
+    {% endfor %}
+{% else %}
+    暂无内容
+{% endif %}
+
+{{ paginate(comm_obj, comm_url) }}
+
+{% endblock %}

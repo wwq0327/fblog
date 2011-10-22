@@ -1,0 +1,163 @@
+body {
+    max-width: 1024px;
+    margin: 0 auto;
+    font-size: 12pt;
+    background-color: white;
+    color: #606060;
+    line-height: 1.25em;
+}
+
+input,
+textarea {
+    padding: 5px;
+    font-size: 16pt;
+    border: 1px solid #ddd;
+}
+
+textarea {
+    margin: 0;
+}
+
+a:link, a {
+    color: #202020;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3366CC;
+    border-bottom: 1px dotted #3366CC;
+}
+
+h1 {
+    padding: 0 0 0.5 0;
+    font-weight: normal;
+    font-size: 2em;
+}
+
+h3 {
+    color: #000;
+}
+
+pre,
+code {
+  font-family: monospace;
+  color: #060;
+
+}
+
+img {
+    border: none;
+}
+
+pre {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 1px solid silver;
+  line-height: 14pt;
+}
+
+#line {
+    padding-top: 5px;
+    clear: both;
+    border-bottom: 1px solid #ccc;
+}
+
+h1 a:link, h1 a, h1 a:hover {
+    text-decoration: nono;
+    color: #999;
+}
+
+#header {
+    margin: 0px;
+}
+
+#top {
+    height: 5px;
+    background-color: #202020;
+}
+
+#main {
+    margin-top: 10px;
+}
+
+#main #content {
+    float: left;
+    width: 73%;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+
+#article dt {
+    border-bottom: 1px dotted #ccc;
+    font-size: 1.2em;
+    font-style: normal;
+    margin: 0 5px 5px 0;
+    padding: 5px 0 5px 5px;
+}
+
+#article dd {
+    margin: 0;
+    padding: 0 5px 0 5px;
+    font-size: 0.8em;
+}
+
+#article #comment {
+    margin-top: 5px;
+    border-top: 1px dotted #ccc;
+    margin-right: 5px;
+    text-align: right;
+    font-size: 0.8em;
+}
+
+#main #sidebar {
+    float: right;
+    width: 25%;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    padding-left: 0;
+}
+
+#sidebar h3 {
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+ul.wz {
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0 5px 0 20px;
+    list-style-type: square;
+}
+
+#comments {
+    margin: 5px 10px 5px 10px;
+}
+
+#csfont {
+    font-size: 0.8em;
+}
+
+.pagination { margin: 12px 0; text-align: center; font-size: 0.8em;}
+
+#about {
+    font-size: 0.8em;
+    margin: 0 5px 0 5px;
+}
+
+#adminlist ul, li {
+    border-bottom: 1px dotted #ccc;
+}
+
+
+#footer {
+    clear: both;
+    border-top: 1px solid #ccc;
+    height: 50px;
+
+}
+
+#footer p {
+    text-align: center;
+    font-size: 0.8em;
+}
