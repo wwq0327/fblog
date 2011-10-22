@@ -6,6 +6,9 @@ from datetime import datetime
 from fblog.extensions import db
 
 class Comments(db.Model):
+
+    __tablename__ = 'comments'
+    
     id = db.Column(db.Integer, primary_key=True)
     eid = db.Column(db.Integer)
     name = db.Column(db.String(48), nullable=False)

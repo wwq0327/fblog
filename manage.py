@@ -71,11 +71,12 @@ def createuser(username=None, password=None, email=None):
 
 @manager.command
 def createall():
+    """创建数据库"""
     db.create_all()
 
 @manager.command
 def dropall():
-
+    """清理数据库数据"""
     if prompt_bool("Are you sure? You will lose all your DATA!"):
         db.drop_all()
 
