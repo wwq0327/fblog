@@ -5,11 +5,11 @@
     application.py
     ~~~~~~~~~~~~~~~~~~~~
 
-    minit 应用程序配置程序，处理程序的相关模块。
+    fblog 应用程序配置程序，处理程序的相关模块。
     
-    :date: 2011-10-21
+    :date: 2011-10-22
     :author: wwq0327 <wwq0327@gmail.com>
-    :license: GPLv3
+    :license: lgpl
 """
 
 from datetime import datetime
