@@ -17,13 +17,15 @@ import markdown
 
 from flask import Flask
 
+#from flaskext.gravatar import Gravatar
 from fblog.config import Config, DevConfig, ProConfig
-from fblog.extensions import db
+from fblog.extensions import db, login_manager
 
 #导入相关视图模块
-from fblog.views import blog, admin, account, login_manager, feed 
+from fblog.views import blog, admin, account, feed
+from fblog.models import Anonymous
 
-__all__ = ['create_app', 'gravatar']
+__all__ = ['create_app']
 
 # 默认应用程序名称，与应用程序目录名一致
 DEFAULT_APP_NAME = 'fblog'
@@ -51,6 +53,7 @@ def create_app(config=None, app_name=None, blueprints=None):
     configure_blueprints(app, blueprints)
     configure_extensions(app)
     configure_templates(app)
+    configure_login(app)
 
     return app
 
@@ -75,6 +78,13 @@ def configure_extensions(app):
 
     db.init_app(app)
 
+def configure_login(app):
+    login_manager.anonymouse = Anonymous
+    login_manager.login_view = 'account.login'
+
+    login_manager.setup_app(app)
+
+
 
 def format_datetime(dbtime):
     """Format a timestamp for display."""
@@ -83,13 +93,6 @@ def format_datetime(dbtime):
 def format_text(content):
     return markdown.markdown(content)
 
-# 根据Email产生头像
-gravatar = Gravatar(app,
-                    size=36,
-                    rating='g',
-                    default='retro',
-                    force_default=False,
-                    force_lower=False)
 
 def configure_templates(app):
     # 自订义的模板过滤器

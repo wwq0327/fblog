@@ -13,9 +13,14 @@
 from flask import current_app
 
 from flaskext.script import Manager, Server, prompt_bool, prompt, prompt_pass
+from flaskext.gravatar import Gravatar
 
-from fblog import app, db
+from fblog import create_app
+from fblog.extensions import db
+
 from fblog.models import User, Post, Comments, Tag
+
+app = create_app()
 
 manager = Manager(app)
 
@@ -82,6 +87,14 @@ def make_shell_context():
                 Tag = Tag,
                 User=User,
                 Comments=Comments)
+
+# 根据Email产生头像
+gravatar = Gravatar(app,
+                    size=36,
+                    rating='g',
+                    default='retro',
+                    force_default=False,
+                    force_lower=False)
 
 if __name__ == '__main__':
     manager.run()

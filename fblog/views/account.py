@@ -6,6 +6,8 @@ from flaskext.login import (LoginManager, current_user, login_required, login_us
                           logout_user, UserMixin, AnonymousUser, confirm_login,
                           fresh_login_required)
 
+from fblog.extensions import login_manager
+
 from fblog.models import Anonymous, User, LoginUser
 from fblog.forms import LoginForm
 from fblog.views import admin
@@ -13,10 +15,10 @@ from fblog.views import admin
 ## account = Module(__name__)
 account = Blueprint("account", __name__)
 
-login_manager = LoginManager()
-login_manager.anonymous_user = Anonymous
-login_manager.login_view = 'account.login'
-login_manager.login_message = u'你需要登录后才能进行下一步操作'
+## login_manager = LoginManager()
+## login_manager.anonymous_user = Anonymous
+## login_manager.login_view = 'account.login'
+## login_manager.login_message = u'你需要登录后才能进行下一步操作'
 ## login_manager.refresh_view = 'fblog.views.account.reauth'
 
 @login_manager.user_loader
