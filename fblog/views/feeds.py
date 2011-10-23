@@ -38,6 +38,7 @@ def index():
         feed.add_post(post)
 
     return feed.get_response()
+    #return feed.to_string()
 
     
                  
